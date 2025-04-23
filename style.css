@@ -1,6 +1,13 @@
+:root {
+    --primary-dark: #006A71;
+    --primary-medium: #48A6A7;
+    --primary-light: #9ACBD0;
+    --background-light: #F2EFE7;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--background-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +22,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
@@ -26,25 +33,29 @@ h1 {
 .category-filter label {
     margin-right: 10px;
     font-size: 16px;
+    color: var(--primary-dark);
 }
 
 .category-filter select {
     padding: 8px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-light);
+    background-color: white;
+    color: var(--primary-dark);
 }
 
 .quote-card {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 106, 113, 0.15);
     padding: 20px;
     margin-bottom: 20px;
     min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-left: 4px solid var(--primary-medium);
 }
 
 #quote-text {
@@ -55,7 +66,7 @@ h1 {
 
 #quote-author {
     font-size: 16px;
-    color: #666;
+    color: var(--primary-dark);
     font-style: italic;
     margin: 0;
 }
@@ -67,7 +78,7 @@ h1 {
 }
 
 button {
-    background-color: #007bff;
+    background-color: var(--primary-dark);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -78,11 +89,11 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-medium);
 }
 
 a#share-button {
-    background-color: #1da1f2;
+    background-color: var(--primary-medium);
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -92,5 +103,5 @@ a#share-button {
 }
 
 a#share-button:hover {
-    background-color: #0c85d0;
+    background-color: var(--primary-dark);
 }
