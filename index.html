@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful random quote generator with categories including motivational, inspirational, humor, love, and wisdom quotes.">
+    <meta name="keywords" content="quotes, random quotes, motivational quotes, inspirational">
+    <meta property="og:title" content="Random Quote Generator">
+    <meta property="og:description" content="Discover inspiring quotes across different categories">
+    <meta property="og:type" content="website">
+    
     <title>Random Quote Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006A71'><path d='M9,22h6c0.3,0,0.5-0.2,0.5-0.5v-1c0-0.3-0.2-0.5-0.5-0.5h-6c-0.3,0-0.5,0.2-0.5,0.5v1C8.5,21.8,8.7,22,9,22z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M14.5,15h-5c-0.3,0-0.5-0.2-0.5-0.5v-1c0-0.3,0.2-0.5,0.5-0.5h5c0.3,0,0.5,0.2,0.5,0.5v1C15,14.8,14.8,15,14.5,15z M16.5,11h-9c-0.3,0-0.5-0.2-0.5-0.5v-1c0-0.3,0.2-0.5,0.5-0.5h9c0.3,0,0.5,0.2,0.5,0.5v1C17,10.8,16.8,11,16.5,11z'/></svg>">
 </head>
 <body>
     <div class="container">
         <h1>Random Quote Generator</h1>
+        
         <div class="category-filter">
             <label for="category">Filter by Category:</label>
             <select id="category" onchange="fetchQuote()">
@@ -20,18 +28,46 @@
                 <option value="wisdom">Wisdom</option>
             </select>
         </div>
+        
         <div class="quote-card">
-            <p id="quote-text">Click the button to get a quote!</p>
-            <p id="quote-author">— Unknown</p>
+            <div class="quote-content">
+                <p id="quote-text">Click the button to get a quote!</p>
+                <p id="quote-author">— Unknown</p>
+            </div>
+            <div class="quote-actions">
+                <button id="like-button" class="icon-button" aria-label="Like this quote">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
+        
+        <div class="keyboard-shortcuts">
+            <span><kbd>N</kbd> New Quote</span>
+            <span><kbd>C</kbd> Copy Quote</span>
+        </div>
+        
         <div class="buttons">
             <button onclick="fetchQuote()">New Quote</button>
-            <a id="share-button" href="#" target="_blank">Share on X</a>
+            <button id="copy-button">Copy</button>
+            <a id="share-button" href="https://x.com" target="_blank" aria-label="Share on Twitter">
+                Share on X
+            </a>
+        </div>
+        
+        <div class="favorites-section">
+            <h2>Favorite Quotes</h2>
+            <div id="favorites-container" class="favorites-container">
+                <p class="no-favorites">Your favorite quotes will appear here</p>
+            </div>
         </div>
     </div>
+    
     <footer>
         <p>Designed by <a href="https://my-portfolio-kappa-ochre.vercel.app/" target="_blank">Savindu Weththasinghe</a></p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
